@@ -45,6 +45,7 @@ int main(){
             int coluna;
             printf("Escolha a coluna: ");
             scanf("%d", &coluna);
+            
             break;
         case 5:
             printf("Programa encerrado!!");
@@ -88,7 +89,11 @@ int somaMatriz(int **mat, int m, int n){
 }
 
 int *colunaMat(int **mat, int m, int n, int ncoluna){
-
+    int *vetor = (int *)malloc(m * sizeof(int));
+    for(int i=0; i<m; i++){
+        vetor[i] = mat[i][ncoluna]; 
+    }
+    return vetor;
 }
 
 void liberaMatriz(int **mat, int m){
@@ -108,5 +113,7 @@ void imprimeMatriz(int **mat, int m, int n){
 }
 
 void imprimeVet(int *vet, int n){
-
+    for(int i=0; i<n; i++){
+        printf("%d", vet[i]);
+    }
 }
